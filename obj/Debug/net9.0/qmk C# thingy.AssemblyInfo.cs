@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("qmk C# thingy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7008f48cae9350a7a382beaeb6e04cc6d2361ba5")]
 [assembly: System.Reflection.AssemblyProductAttribute("qmk C# thingy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("qmk C# thingy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

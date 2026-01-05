@@ -15,3 +15,4 @@ C:\Users\tonyl\Desktop\qmk C# thingy\obj\Debug\net9.0\refint\qmk C# thingy.dll
 C:\Users\tonyl\Desktop\qmk C# thingy\obj\Debug\net9.0\qmk C# thingy.pdb
 C:\Users\tonyl\Desktop\qmk C# thingy\obj\Debug\net9.0\qmk C# thingy.genruntimeconfig.cache
 C:\Users\tonyl\Desktop\qmk C# thingy\obj\Debug\net9.0\ref\qmk C# thingy.dll
+C:\Users\tonyl\Desktop\qmk C# thingy\obj\Debug\net9.0\qmk C# thingy.sourcelink.json

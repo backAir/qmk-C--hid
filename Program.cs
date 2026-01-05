@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using HidSharp;
 
 class Program
@@ -10,10 +11,11 @@ class Program
 
         HidDevice rawDevice = null;
 
+        // Find the Raw HID interface with exactly 33-byte reports
         foreach (var dev in DeviceList.Local.GetHidDevices(vendorId, productId))
         {
-            // QMK Raw HID always uses 32-byte OUT reports
-            if (dev.GetMaxOutputReportLength() == 33)
+            if (dev.GetMaxOutputReportLength() == 33 &&
+                dev.GetMaxInputReportLength() == 33)
             {
                 rawDevice = dev;
                 break;
@@ -30,18 +32,59 @@ class Program
         {
             using (var stream = rawDevice.Open())
             {
-                byte[] buffer = new byte[32];
-                buffer[0] = 0x01; // command
-                buffer[1] = 0xFF;
+                stream.ReadTimeout = Timeout.Infinite;
+                stream.WriteTimeout = 2000;
 
-                stream.Write(buffer);
+                // Start the reader thread
+                Thread readerThread = new Thread(() => ReaderLoop(stream));
+                readerThread.IsBackground = true; // Stops when main exits
+                readerThread.Start();
+
+                Console.WriteLine("Reader thread started. Press Enter to send a test message or Ctrl+C to quit.");
+
+                while (true)
+                {
+                    Console.ReadLine(); // Wait for user input to send
+                    byte[] outBuffer = new byte[33];
+                    outBuffer[0] = 0x01; // Example command
+                    outBuffer[1] = 0xAA; // Example payload
+
+                    stream.Write(outBuffer);
+                    Console.WriteLine("Sent command to keyboard.");
+                }
             }
-
-            Console.WriteLine("Raw HID message sent.");
         }
         catch (Exception ex)
         {
             Console.WriteLine($"HID error: {ex.Message}");
+        }
+    }
+
+    static void ReaderLoop(HidStream stream)
+    {
+        byte[] inBuffer = new byte[33];
+
+        while (true)
+        {
+            try
+            {
+                int bytesRead = stream.Read(inBuffer, 0, inBuffer.Length);
+                if (bytesRead > 0)
+                {
+                    // Print first few bytes for debugging
+                    Console.WriteLine($"Received {bytesRead} bytes: " +
+                        BitConverter.ToString(inBuffer, 0, bytesRead));
+                }
+            }
+            catch (TimeoutException)
+            {
+                // Shouldn't happen with Timeout.Infinite
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Reader error: {ex.Message}");
+                break;
+            }
         }
     }
 }
