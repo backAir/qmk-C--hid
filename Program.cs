@@ -8,7 +8,7 @@ class Program
     {
         const int vendorId = 0x7C92;
         const int productId = 0x0001;
-
+        start:
         HidDevice rawDevice = null;
 
         // Find the Raw HID interface with exactly 33-byte reports
@@ -57,6 +57,7 @@ class Program
         catch (Exception ex)
         {
             Console.WriteLine($"HID error: {ex.Message}");
+            goto start; 
         }
     }
 
