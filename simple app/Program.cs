@@ -7,7 +7,7 @@ class Program
     static void Main()
     {
         const int vendorId = 0x7C92;
-        const int productId = 0x0001;
+        const int productId = 0x0002;
         start:
         HidDevice rawDevice = null;
 
@@ -45,10 +45,12 @@ class Program
                 while (true)
                 {
                     Console.ReadLine(); // Wait for user input to send
-                    byte[] outBuffer = new byte[33];
-                    outBuffer[0] = 0x01; // Example command
-                    outBuffer[1] = 0xAA; // Example payload
+                    byte[] outBuffer = new byte[32];
+                    outBuffer[0] = 0x01; // needs to be 1 idk why
 
+                    //! fucked up id's: 01, 02, 04, 0C, 0D, 0E, 11, 12
+                    outBuffer[1] = 20; // id to change layer
+                    outBuffer[2] = 1; //layer to change to
                     stream.Write(outBuffer);
                     Console.WriteLine("Sent command to keyboard.");
                 }
@@ -72,6 +74,7 @@ class Program
                 int bytesRead = stream.Read(inBuffer, 0, inBuffer.Length);
                 if (bytesRead > 0)
                 {
+
                     // Print first few bytes for debugging
                     Console.WriteLine($"Received {bytesRead} bytes: " +
                         BitConverter.ToString(inBuffer, 0, bytesRead));
