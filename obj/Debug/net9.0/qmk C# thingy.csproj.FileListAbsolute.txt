@@ -1,0 +1,17 @@
+C:\Users\tonyl\Desktop\qmk C# thingy\bin\Debug\net9.0\qmk C# thingy.exe
+C:\Users\tonyl\Desktop\qmk C# thingy\bin\Debug\net9.0\qmk C# thingy.deps.json
+C:\Users\tonyl\Desktop\qmk C# thingy\bin\Debug\net9.0\qmk C# thingy.runtimeconfig.json
+C:\Users\tonyl\Desktop\qmk C# thingy\bin\Debug\net9.0\qmk C# thingy.dll
+C:\Users\tonyl\Desktop\qmk C# thingy\bin\Debug\net9.0\qmk C# thingy.pdb
+C:\Users\tonyl\Desktop\qmk C# thingy\bin\Debug\net9.0\HidSharp.dll
+C:\Users\tonyl\Desktop\qmk C# thingy\obj\Debug\net9.0\qmk C# thingy.csproj.AssemblyReference.cache
+C:\Users\tonyl\Desktop\qmk C# thingy\obj\Debug\net9.0\qmk C# thingy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tonyl\Desktop\qmk C# thingy\obj\Debug\net9.0\qmk C# thingy.AssemblyInfoInputs.cache
+C:\Users\tonyl\Desktop\qmk C# thingy\obj\Debug\net9.0\qmk C# thingy.AssemblyInfo.cs
+C:\Users\tonyl\Desktop\qmk C# thingy\obj\Debug\net9.0\qmk C# thingy.csproj.CoreCompileInputs.cache
+C:\Users\tonyl\Desktop\qmk C# thingy\obj\Debug\net9.0\qmk C# t.10E3B9FD.Up2Date
+C:\Users\tonyl\Desktop\qmk C# thingy\obj\Debug\net9.0\qmk C# thingy.dll
+C:\Users\tonyl\Desktop\qmk C# thingy\obj\Debug\net9.0\refint\qmk C# thingy.dll
+C:\Users\tonyl\Desktop\qmk C# thingy\obj\Debug\net9.0\qmk C# thingy.pdb
+C:\Users\tonyl\Desktop\qmk C# thingy\obj\Debug\net9.0\qmk C# thingy.genruntimeconfig.cache
+C:\Users\tonyl\Desktop\qmk C# thingy\obj\Debug\net9.0\ref\qmk C# thingy.dll

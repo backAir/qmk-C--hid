@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "oo6LdXQO9/Y=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\tonyl\\Desktop\\qmk C# thingy\\qmk C# thingy.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tonyl\\.nuget\\packages\\hidsharp\\2.6.4\\hidsharp.2.6.4.nupkg.sha512"
+  ],
+  "logs": []
+}
